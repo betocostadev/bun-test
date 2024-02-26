@@ -1,0 +1,5 @@
+=== Greetings ===
+Hello Bun Developer!
+Looks like Bun is very simple and fast right?
+
+Source: greet.txt

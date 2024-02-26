@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "test": "bun test",
-    "build": "bun build",
+    "build": "bun build ./index.ts --outdir ./build",
     "dev": "bun --watch ./index.ts",
     "start": "bun run ./index.ts"
   },
