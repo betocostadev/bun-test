@@ -2,6 +2,12 @@
   "name": "bun-test",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "test": "bun test",
+    "build": "bun build",
+    "dev": "bun --watch ./index.ts",
+    "start": "bun run ./index.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
