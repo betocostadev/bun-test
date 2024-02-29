@@ -6,7 +6,21 @@ const server = Bun.serve({
     const url = new URL(req.url)
 
     if (url.pathname === '/') {
-      return new Response('Bun server is running!')
+      return new Response(
+        `<pre>
+          <h3>Bun Development</h3>
+          <p>Check the <a href="/greet">greet.txt file</a>.</p>
+          <p>Check the <a href="/posts">posts</a>.</p>
+          <p>Throw <a href="/test">an error</a>.</p>
+          <p>Nowhere <a href="/nowhere">or 404</a>.</p>
+      </pre>`,
+        {
+          headers: {
+            'content-type': 'text/html',
+          },
+          status: 200,
+        }
+      )
     }
 
     if (url.pathname === '/posts') {
@@ -27,7 +41,7 @@ const server = Bun.serve({
       return new Response(Bun.file('./greet.txt'))
     }
 
-    return new Response('Not found', { status: 404 })
+    return new Response('404 - Page not found', { status: 404 })
   },
 
   error(error) {
